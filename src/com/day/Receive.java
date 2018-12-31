@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.text.DateFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 /* ·ÖÎö£º
@@ -36,11 +38,11 @@ public class Receive implements Runnable{
 	public void getMessage(){
 		try {
 			String s=br.readLine();
-			while(null!=s&& !"".equals(s)){
-				System.out.println(s);
-				s = br.readLine();
-			}//
-			System.out.println(s);
+			//while(null!=s&& !"".equals(s)){
+			//	System.out.println(s);
+			//	s = br.readLine();
+			//}//
+			System.out.println(DateFormat.getDateTimeInstance(2, 2, Locale.CHINESE).format(new java.util.Date())+" "+s);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
